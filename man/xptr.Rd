@@ -5,3 +5,21 @@
 \alias{xptr}
 \alias{xptr-package}
 \title{Functions to maniplicate externalptr}
+\description{
+Functions to maniplicate externalptr.
+}
+\details{
+R does not come with a set ot functions to maniplicate external pointer.
+`xptr` provides some functions to vertify, create and modifiy externalptr objects.
+}
+\examples{
+library(xptr)
+a <- create_xptr("0x11a888090")
+b <- create_xptr("0x11a888098")
+xptr_address(b)
+xptr_clear(b)
+xptr_address(b)
+is_null_xptr(b)
+set_xptr_address(b, xptr_address(a))
+xptr_address(b)
+}

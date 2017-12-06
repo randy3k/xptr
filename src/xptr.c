@@ -15,7 +15,7 @@ void* str2ptr(SEXP p) {
     return (void*) strtol(CHAR(STRING_PTR(p)[0]), NULL, 0);
 }
 
-SEXP create_xptr(SEXP p, SEXP tag, SEXP protected) {
+SEXP new_xptr(SEXP p, SEXP tag, SEXP protected) {
     return R_MakeExternalPtr(str2ptr(p), tag, protected);
 }
 
@@ -74,7 +74,7 @@ void register_xtr_finalizer(SEXP s, SEXP f, SEXP onexit) {
 
 
 static const R_CallMethodDef CallEntries[] = {
-    {"create_xptr", (DL_FUNC) &create_xptr, 3},
+    {"new_xptr", (DL_FUNC) &new_xptr, 3},
     {"null_xptr", (DL_FUNC) &null_xptr, 2},
     {"is_null_xptr", (DL_FUNC) &is_null_xptr, 1},
     {"xptr_address", (DL_FUNC) &xptr_address, 1},

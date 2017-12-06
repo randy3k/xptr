@@ -14,8 +14,8 @@ R does not come with a set ot functions to maniplicate external pointer.
 }
 \examples{
 library(xptr)
-a <- create_xptr("0x11a888090")
-b <- create_xptr("0x11a888098")
+a <- new_xptr("0x11a888090")
+b <- new_xptr("0x11a888098")
 xptr_address(b)
 xptr_clear(b)
 xptr_address(b)

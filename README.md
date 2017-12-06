@@ -1,13 +1,13 @@
-# Functions to maniplicate externalptr
+# Manipulating External Pointer
 
-R does not come with a set ot functions to maniplicate external pointer. xptr provides some functions to vertify, create and modifiy externalptr objects.
+`xptr` provides functions to verify, create and modify `externalptr` objects.
 
 ### Usage
 
 ```r
 library(xptr)
-a <- create_xptr("0x11a888090")
-b <- create_xptr("0x11a888098")
+a <- new_xptr("0x11a888090")
+b <- new_xptr("0x11a888098")
 xptr_address(b)
 #> [1] "0x11a888098"
 xptr_clear(b)

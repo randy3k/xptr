@@ -1,16 +1,13 @@
-#' Functions to maniplicate externalptr.
-#'
-#' R does not come with a set ot functions to maniplicate external pointer.
-#' `xptr` provides some functions to vertify, create and modifiy externalptr objects.
+#' "xptr" provides functions to verify, create and modify "externalptr" objects.
 #'
 #' @name xptr
-#' @title Functions to maniplicate externalptr
+#' @title Manipulating External Pointer
 #' @docType package
 #' @useDynLib xptr
 #' @examples
 #' library(xptr)
-#' a <- create_xptr("0x11a888090")
-#' b <- create_xptr("0x11a888098")
+#' a <- new_xptr("0x11a888090")
+#' b <- new_xptr("0x11a888098")
 #' xptr_address(b)
 #' xptr_clear(b)
 #' xptr_address(b)
@@ -25,11 +22,11 @@ NULL
 #' @param protected an objected to be protected from gc within the lifetime of the external pointer
 #' @return an `externalptr` object
 #' @export
-create_xptr <- function(address = "", tag = NULL, protected = NULL) {
-    .Call("create_xptr", PACKAGE = "xptr", address, tag, protected)
+new_xptr <- function(address = "", tag = NULL, protected = NULL) {
+    .Call("new_xptr", PACKAGE = "xptr", address, tag, protected)
 }
 
-#' @rdname create_xptr
+#' @rdname new_xptr
 #' @export
 null_xptr <- function(tag = NULL, protected = NULL) {
     .Call("null_xptr", PACKAGE = "xptr", tag, protected)

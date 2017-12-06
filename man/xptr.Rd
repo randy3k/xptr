@@ -4,13 +4,9 @@
 \name{xptr}
 \alias{xptr}
 \alias{xptr-package}
-\title{Functions to maniplicate externalptr}
+\title{Manipulating External Pointer}
 \description{
-Functions to maniplicate externalptr.
-}
-\details{
-R does not come with a set ot functions to maniplicate external pointer.
-`xptr` provides some functions to vertify, create and modifiy externalptr objects.
+"xptr" provides functions to verify, create and modify "externalptr" objects.
 }
 \examples{
 library(xptr)

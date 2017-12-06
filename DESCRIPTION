@@ -8,7 +8,7 @@ Authors@R: c(
     person("Randy", "Lai", , "randy.cs.lai@gmail.com", role = c("aut"))
     )
 Maintainer: Randy Lai <randy.cs.lai@gmail.com>
-URL: https://www.github.com/randy3k/xptr
+URL: https://randy3k.github.io/xptr/
 Description: "xptr" provides functions to verify, create and modify "externalptr" objects.
 License: MIT + file LICENSE
 NeedsCompilation: yes

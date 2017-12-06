@@ -2,6 +2,10 @@
 
 `xptr` provides functions to verify, create and modify `externalptr` objects.
 
+Documentation: https://randy3k.github.io/xptr/
+
+Source: https://github.com/randy3k/xptr
+
 ### Usage
 
 ```r

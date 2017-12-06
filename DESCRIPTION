@@ -4,6 +4,9 @@ Title: Manipulating External Pointer
 Version: 1.0
 Date: 2017-12-05
 Author: Randy Lai [aut]
+Authors@R: c(
+    person("Randy", "Lai", , "randy.cs.lai@gmail.com", role = c("aut"))
+    )
 Maintainer: Randy Lai <randy.cs.lai@gmail.com>
 URL: https://www.github.com/randy3k/xptr
 Description: "xptr" provides functions to verify, create and modify "externalptr" objects.

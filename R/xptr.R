@@ -1,26 +1,39 @@
-#' "xptr" provides functions to verify, create and modify "externalptr" objects.
+#' There is limited native support for external pointers in the R interface.
+#' This package provides some basic tools to verify, create and modify 'externalptr' objects.
+#'
 #'
 #' @name xptr
 #' @title Manipulating External Pointer
 #' @docType package
 #' @useDynLib xptr
+#' @references \itemize{
+#' \item \url{https://cran.r-project.org/doc/manuals/r-release/R-exts.html#External-pointers-and-weak-references}
+#' }
 #' @examples
 #' library(xptr)
 #' a <- new_xptr("0x11a888090")
 #' b <- new_xptr("0x11a888098")
-#' xptr_address(b)
-#' xptr_clear(b)
-#' xptr_address(b)
-#' is_null_xptr(b)
-#' set_xptr_address(b, xptr_address(a))
-#' xptr_address(b)
+#' is_xpt(a)
+#' xptr_address(a)
+#' xptr_clear(a)
+#' is_null_xptr(a)
+#' set_xptr_address(a, xptr_address(b))
+#' xptr_address(a)
 NULL
+
+#' Check if an object is an external pointer.
+#' @param s an \code{externalptr} object
+#' @return a boolean
+#' @export
+is_xpt <- function(s) {
+    mode(s) == "externalptr"
+}
 
 #' Create an external pointer object.
 #' @param address a string of pointer address
 #' @param tag an optional tag
 #' @param protected an objected to be protected from gc within the lifetime of the external pointer
-#' @return an `externalptr` object
+#' @return an \code{externalptr} object
 #' @export
 new_xptr <- function(address = "", tag = NULL, protected = NULL) {
     .Call("new_xptr", PACKAGE = "xptr", address, tag, protected)
@@ -33,15 +46,15 @@ null_xptr <- function(tag = NULL, protected = NULL) {
 }
 
 #' Check if the external pointer is null.
-#' @param s an `externalptr` object
-#' @return TRUE/FALSE
+#' @param s an \code{externalptr} object
+#' @return a boolean
 #' @export
 is_null_xptr <- function(s) {
     .Call("is_null_xptr", PACKAGE = "xptr", s)
 }
 
 #' External pointer address.
-#' @param s an `externalptr` object
+#' @param s an \code{externalptr} object
 #' @return a string of pointer address
 #' @export
 xptr_address <- function(s) {
@@ -49,7 +62,7 @@ xptr_address <- function(s) {
 }
 
 #' Tag of the external pointer.
-#' @param s an `externalptr` object
+#' @param s an \code{externalptr} object
 #' @return an R object
 #' @export
 xptr_tag <- function(s) {
@@ -57,7 +70,7 @@ xptr_tag <- function(s) {
 }
 
 #' Protected R object of the external pointer.
-#' @param s an `externalptr` object
+#' @param s an \code{externalptr} object
 #' @return an R object
 #' @export
 xptr_protected <- function(s) {
@@ -65,7 +78,7 @@ xptr_protected <- function(s) {
 }
 
 #' Clear the pointer address of the external pointer.
-#' @param s an `externalptr` object
+#' @param s an \code{externalptr} object
 #' @export
 xptr_clear <- function(s) {
     .Call("xptr_clear", PACKAGE = "xptr", s)
@@ -73,7 +86,7 @@ xptr_clear <- function(s) {
 }
 
 #' Set the address of the external pointer.
-#' @param s an `externalptr` object
+#' @param s an \code{externalptr} object
 #' @param p a string of pointer address
 #' @export
 set_xptr_address <- function(s, p) {
@@ -82,7 +95,7 @@ set_xptr_address <- function(s, p) {
 }
 
 #' Set a tag to the external poitner.
-#' @param s an `externalptr` object
+#' @param s an \code{externalptr} object
 #' @param tag an R object
 #' @export
 set_xptr_tag <- function(s, tag) {
@@ -91,7 +104,7 @@ set_xptr_tag <- function(s, tag) {
 }
 
 #' Set a protected R object to the external poitner.
-#' @param s an `externalptr` object
+#' @param s an \code{externalptr} object
 #' @param protected an R object
 #' @export
 set_xptr_protected <- function(s, protected) {
@@ -100,9 +113,10 @@ set_xptr_protected <- function(s, protected) {
 }
 
 #' Register a finalizer for external poitner.
-#' @param s an `externalptr` object
+#' @param s an \code{externalptr} object
 #' @param f an R function
 #' @param onexit should the finalizer execute on exit?
+#' @seealso \code{\link[base]{reg.finalizer}}
 #' @export
 register_xtr_finalizer <- function(s, f, onexit = FALSE) {
     .Call("register_xtr_finalizer", PACKAGE = "xptr", s, f, onexit)

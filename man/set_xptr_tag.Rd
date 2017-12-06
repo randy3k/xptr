@@ -7,7 +7,7 @@
 set_xptr_tag(s, tag)
 }
 \arguments{
-\item{s}{an `externalptr` object}
+\item{s}{an \code{externalptr} object}
 
 \item{tag}{an R object}
 }

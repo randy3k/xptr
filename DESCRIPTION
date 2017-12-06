@@ -3,13 +3,13 @@ Type: Package
 Title: Manipulating External Pointer
 Version: 1.0
 Date: 2017-12-05
-Author: Randy Lai [aut]
 Authors@R: c(
-    person("Randy", "Lai", , "randy.cs.lai@gmail.com", role = c("aut"))
+    person("Randy", "Lai", , "randy.cs.lai@gmail.com", role = c("aut", "cre"))
     )
 Maintainer: Randy Lai <randy.cs.lai@gmail.com>
 URL: https://randy3k.github.io/xptr/
-Description: "xptr" provides functions to verify, create and modify "externalptr" objects.
+Description: There is limited native support for external pointers in the R interface. 
+    This package provides some basic tools to verify, create and modify 'externalptr' objects.
 License: MIT + file LICENSE
 NeedsCompilation: yes
 RoxygenNote: 6.0.1

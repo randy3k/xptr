@@ -7,7 +7,7 @@
 set_xptr_address(s, p)
 }
 \arguments{
-\item{s}{an `externalptr` object}
+\item{s}{an \code{externalptr} object}
 
 \item{p}{a string of pointer address}
 }

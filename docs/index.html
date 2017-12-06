@@ -29,7 +29,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
+  <a href="/index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -49,33 +49,49 @@
       
       </header><div class="row">
   <div class="contents col-md-9">
-    <section class="level1"><div class="page-header"><h1>Manipulating External Pointer</h1></div>
-<p><code>xptr</code> provides functions to verify, create and modify <code>externalptr</code> objects.</p>
-<p>Documentation: <a href="https://randy3k.github.io/xptr/" class="uri">https://randy3k.github.io/xptr/</a></p>
-<p>Source: <a href="https://github.com/randy3k/xptr" class="uri">https://github.com/randy3k/xptr</a></p>
-<section class="level3"><h3>Usage</h3>
-<pre class="sourceCode r" id="cb1"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(xptr)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">a &lt;-<span class="st"> </span><span class="kw"><a href="reference/new_xptr.html">new_xptr</a></span>(<span class="st">"0x11a888090"</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">b &lt;-<span class="st"> </span><span class="kw"><a href="reference/new_xptr.html">new_xptr</a></span>(<span class="st">"0x11a888098"</span>)</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw"><a href="reference/xptr_address.html">xptr_address</a></span>(b)</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="co">#&gt; [1] "0x11a888098"</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw"><a href="reference/xptr_clear.html">xptr_clear</a></span>(b)</a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw"><a href="reference/xptr_address.html">xptr_address</a></span>(b)</a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="co">#&gt; [1] "0x0"</span></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="kw"><a href="reference/is_null_xptr.html">is_null_xptr</a></span>(b)</a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co">#&gt; [1] TRUE</span></a>
-<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="kw"><a href="reference/set_xptr_address.html">set_xptr_address</a></span>(b, <span class="kw"><a href="reference/xptr_address.html">xptr_address</a></span>(a))</a>
-<a class="sourceLine" id="cb1-12" data-line-number="12"><span class="kw"><a href="reference/xptr_address.html">xptr_address</a></span>(b)</a>
-<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="co">#&gt; [1] "0x11a888090"</span></a></code></pre>
-</section></section>
+    <div id="manipulating-external-pointer" class="section level1">
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#manipulating-external-pointer" class="anchor"></a>Manipulating External Pointer</h1></div>
+<p>There is limited native support for external pointers in the R interface. This package provides some basic tools to verify, create and modify ‘externalptr’ objects.</p>
+<ul>
+<li>Documentation: <a href="https://randy3k.github.io/xptr/" class="uri">https://randy3k.github.io/xptr/</a>
+</li>
+<li>Source: <a href="https://github.com/randy3k/xptr" class="uri">https://github.com/randy3k/xptr</a>
+</li>
+<li>References: <a href="https://cran.r-project.org/doc/manuals/r-release/R-exts.html#External-pointers-and-weak-references" class="uri">https://cran.r-project.org/doc/manuals/r-release/R-exts.html#External-pointers-and-weak-references</a>
+</li>
+</ul>
+<div id="usage" class="section level3">
+<h3 class="hasAnchor">
+<a href="#usage" class="anchor"></a>Usage</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(xptr)
+a &lt;-<span class="st"> </span><span class="kw"><a href="reference/new_xptr.html">new_xptr</a></span>(<span class="st">"0x11a888090"</span>)
+b &lt;-<span class="st"> </span><span class="kw"><a href="reference/new_xptr.html">new_xptr</a></span>(<span class="st">"0x11a888098"</span>)
+<span class="kw"><a href="reference/is_xpt.html">is_xpt</a></span>(a)
+<span class="co">#&gt; [1] TRUE</span>
+<span class="kw"><a href="reference/xptr_address.html">xptr_address</a></span>(a)
+<span class="co">#&gt; [1] "0x11a888090"</span>
+<span class="kw"><a href="reference/xptr_clear.html">xptr_clear</a></span>(a)
+<span class="kw"><a href="reference/is_null_xptr.html">is_null_xptr</a></span>(a)
+<span class="co">#&gt; [1] TRUE</span>
+<span class="kw"><a href="reference/set_xptr_address.html">set_xptr_address</a></span>(a, <span class="kw"><a href="reference/xptr_address.html">xptr_address</a></span>(b))
+<span class="kw"><a href="reference/xptr_address.html">xptr_address</a></span>(a)
+<span class="co">#&gt; [1] "0x11a888098"</span></code></pre></div>
 </div>
+</div>
+  </div>
 
   <div class="col-md-3" id="sidebar">
-    <h2>License</h2>
+    <h2>Links</h2>
+<ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://randy3k.github.io/xptr/">https://​randy3k.github.io/​xptr/​</a>
+</li>
+</ul>
+<h2>License</h2>
 <p><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE.html">LICENSE</a></p>
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Randy Lai <br><small class="roles"> Author </small> </li>
+<li>Randy Lai <br><small class="roles"> Author, maintainer </small> </li>
 </ul>
 </div>
 </div>

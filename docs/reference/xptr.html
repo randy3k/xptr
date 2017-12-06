@@ -52,7 +52,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
+  <a href="..//index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -79,23 +79,32 @@
     </div>
 
     
-    <p>"xptr" provides functions to verify, create and modify "externalptr" objects.</p>
+    <p>There is limited native support for external pointers in the R interface.
+This package provides some basic tools to verify, create and modify 'externalptr' objects.</p>
     
 
         
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <ul>
+<li><p><a href='https://cran.r-project.org/doc/manuals/r-release/R-exts.html#External-pointers-and-weak-references'>https://cran.r-project.org/doc/manuals/r-release/R-exts.html#External-pointers-and-weak-references</a></p></li>
+</ul>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>library</span>(<span class='no'>xptr</span>)
 <span class='no'>a</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='new_xptr.html'>new_xptr</a></span>(<span class='st'>"0x11a888090"</span>)
 <span class='no'>b</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='new_xptr.html'>new_xptr</a></span>(<span class='st'>"0x11a888098"</span>)
-<span class='fu'><a href='xptr_address.html'>xptr_address</a></span>(<span class='no'>b</span>)</div><div class='output co'>#&gt; [1] "0x11a888098"</div><div class='input'><span class='fu'><a href='xptr_clear.html'>xptr_clear</a></span>(<span class='no'>b</span>)
-<span class='fu'><a href='xptr_address.html'>xptr_address</a></span>(<span class='no'>b</span>)</div><div class='output co'>#&gt; [1] "0x0"</div><div class='input'><span class='fu'><a href='is_null_xptr.html'>is_null_xptr</a></span>(<span class='no'>b</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='set_xptr_address.html'>set_xptr_address</a></span>(<span class='no'>b</span>, <span class='fu'><a href='xptr_address.html'>xptr_address</a></span>(<span class='no'>a</span>))
-<span class='fu'><a href='xptr_address.html'>xptr_address</a></span>(<span class='no'>b</span>)</div><div class='output co'>#&gt; [1] "0x11a888090"</div></pre>
+<span class='fu'><a href='is_xpt.html'>is_xpt</a></span>(<span class='no'>a</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='xptr_address.html'>xptr_address</a></span>(<span class='no'>a</span>)</div><div class='output co'>#&gt; [1] "0x11a888090"</div><div class='input'><span class='fu'><a href='xptr_clear.html'>xptr_clear</a></span>(<span class='no'>a</span>)
+<span class='fu'><a href='is_null_xptr.html'>is_null_xptr</a></span>(<span class='no'>a</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='fu'><a href='set_xptr_address.html'>set_xptr_address</a></span>(<span class='no'>a</span>, <span class='fu'><a href='xptr_address.html'>xptr_address</a></span>(<span class='no'>b</span>))
+<span class='fu'><a href='xptr_address.html'>xptr_address</a></span>(<span class='no'>a</span>)</div><div class='output co'>#&gt; [1] "0x11a888098"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-            
+      
+      <li><a href="#references">References</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 

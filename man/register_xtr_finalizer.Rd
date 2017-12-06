@@ -7,7 +7,7 @@
 register_xtr_finalizer(s, f, onexit = FALSE)
 }
 \arguments{
-\item{s}{an `externalptr` object}
+\item{s}{an \code{externalptr} object}
 
 \item{f}{an R function}
 
@@ -15,4 +15,7 @@ register_xtr_finalizer(s, f, onexit = FALSE)
 }
 \description{
 Register a finalizer for external poitner.
+}
+\seealso{
+\code{\link[base]{reg.finalizer}}
 }

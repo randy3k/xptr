@@ -7,7 +7,7 @@
 xptr_protected(s)
 }
 \arguments{
-\item{s}{an `externalptr` object}
+\item{s}{an \code{externalptr} object}
 }
 \value{
 an R object

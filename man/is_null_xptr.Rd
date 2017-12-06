@@ -7,10 +7,10 @@
 is_null_xptr(s)
 }
 \arguments{
-\item{s}{an `externalptr` object}
+\item{s}{an \code{externalptr} object}
 }
 \value{
-TRUE/FALSE
+a boolean
 }
 \description{
 Check if the external pointer is null.

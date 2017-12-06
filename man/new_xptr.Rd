@@ -17,7 +17,7 @@ null_xptr(tag = NULL, protected = NULL)
 \item{protected}{an objected to be protected from gc within the lifetime of the external pointer}
 }
 \value{
-an `externalptr` object
+an \code{externalptr} object
 }
 \description{
 Create an external pointer object.

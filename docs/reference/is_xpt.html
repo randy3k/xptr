@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Create an external pointer object. — new_xptr • xptr</title>
+<title>Check if an object is an external pointer. — is_xpt • xptr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -75,37 +75,27 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Create an external pointer object.</h1>
+    <h1>Check if an object is an external pointer.</h1>
     </div>
 
     
-    <p>Create an external pointer object.</p>
+    <p>Check if an object is an external pointer.</p>
     
 
-    <pre class="usage"><span class='fu'>new_xptr</span>(<span class='kw'>address</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>tag</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>protected</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='fu'>null_xptr</span>(<span class='kw'>tag</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>protected</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>is_xpt</span>(<span class='no'>s</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>address</th>
-      <td><p>a string of pointer address</p></td>
-    </tr>
-    <tr>
-      <th>tag</th>
-      <td><p>an optional tag</p></td>
-    </tr>
-    <tr>
-      <th>protected</th>
-      <td><p>an objected to be protected from gc within the lifetime of the external pointer</p></td>
+      <th>s</th>
+      <td><p>an <code>externalptr</code> object</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>an <code>externalptr</code> object</p>
+    <p>a boolean</p>
     
 
   </div>

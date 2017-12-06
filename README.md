@@ -1,10 +1,11 @@
 # Manipulating External Pointer
 
-`xptr` provides functions to verify, create and modify `externalptr` objects.
+There is limited native support for external pointers in the R interface.
+This package provides some basic tools to verify, create and modify 'externalptr' objects.
 
-Documentation: https://randy3k.github.io/xptr/
-
-Source: https://github.com/randy3k/xptr
+- Documentation: https://randy3k.github.io/xptr/
+- Source: https://github.com/randy3k/xptr
+- References: https://cran.r-project.org/doc/manuals/r-release/R-exts.html#External-pointers-and-weak-references
 
 ### Usage
 
@@ -12,14 +13,14 @@ Source: https://github.com/randy3k/xptr
 library(xptr)
 a <- new_xptr("0x11a888090")
 b <- new_xptr("0x11a888098")
-xptr_address(b)
-#> [1] "0x11a888098"
-xptr_clear(b)
-xptr_address(b)
-#> [1] "0x0"
-is_null_xptr(b)
+is_xpt(a)
 #> [1] TRUE
-set_xptr_address(b, xptr_address(a))
-xptr_address(b)
+xptr_address(a)
 #> [1] "0x11a888090"
+xptr_clear(a)
+is_null_xptr(a)
+#> [1] TRUE
+set_xptr_address(a, xptr_address(b))
+xptr_address(a)
+#> [1] "0x11a888098"
 ```

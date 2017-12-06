@@ -6,16 +6,22 @@
 \alias{xptr-package}
 \title{Manipulating External Pointer}
 \description{
-"xptr" provides functions to verify, create and modify "externalptr" objects.
+There is limited native support for external pointers in the R interface.
+This package provides some basic tools to verify, create and modify 'externalptr' objects.
 }
 \examples{
 library(xptr)
 a <- new_xptr("0x11a888090")
 b <- new_xptr("0x11a888098")
-xptr_address(b)
-xptr_clear(b)
-xptr_address(b)
-is_null_xptr(b)
-set_xptr_address(b, xptr_address(a))
-xptr_address(b)
+is_xpt(a)
+xptr_address(a)
+xptr_clear(a)
+is_null_xptr(a)
+set_xptr_address(a, xptr_address(b))
+xptr_address(a)
+}
+\references{
+\itemize{
+\item \url{https://cran.r-project.org/doc/manuals/r-release/R-exts.html#External-pointers-and-weak-references}
+}
 }

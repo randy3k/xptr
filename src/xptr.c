@@ -6,7 +6,7 @@
 
 void check_is_xptr(SEXP s) {
     if (TYPEOF(s) != EXTPTRSXP) {
-        error("exptect an externalptr");
+        error("expect an externalptr");
     }
 }
 

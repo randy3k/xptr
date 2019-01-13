@@ -1,8 +1,8 @@
 Package: xptr
 Type: Package
 Title: Manipulating External Pointer
-Version: 1.1
-Date: 2018-01-08
+Version: 1.1.1
+Date: 2019-01-13
 Authors@R: c(
     person("Randy", "Lai", , "randy.cs.lai@gmail.com", role = c("aut", "cre"))
     )

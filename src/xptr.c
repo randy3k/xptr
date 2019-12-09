@@ -45,31 +45,36 @@ SEXP xptr_protected(SEXP s) {
     return R_ExternalPtrProtected(s);
 }
 
-void xptr_clear(SEXP s){
+SEXP xptr_clear(SEXP s){
     check_is_xptr(s);
     R_ClearExternalPtr(s);
+    return R_NilValue;
 }
 
-void set_xptr_address(SEXP s, SEXP p) {
+SEXP set_xptr_address(SEXP s, SEXP p) {
     check_is_xptr(s);
     R_SetExternalPtrAddr(s, str2ptr(p));
+    return R_NilValue;
 }
 
-void set_xptr_tag(SEXP s, SEXP tag) {
+SEXP set_xptr_tag(SEXP s, SEXP tag) {
     check_is_xptr(s);
     R_SetExternalPtrTag(s, tag);
+    return R_NilValue;
 }
 
-void set_xptr_protected(SEXP s, SEXP protected) {
+SEXP set_xptr_protected(SEXP s, SEXP protected) {
     check_is_xptr(s);
     R_SetExternalPtrProtected(s, protected);
+    return R_NilValue;
 }
 
-void register_xtr_finalizer(SEXP s, SEXP f, SEXP onexit) {
+SEXP register_xtr_finalizer(SEXP s, SEXP f, SEXP onexit) {
     check_is_xptr(s);
     if (!isFunction(f)) error("expect a function");
     if (!isNumeric(onexit)) error("expect TRUE/FALSE");
     R_RegisterFinalizerEx(s, f, Rf_asLogical(onexit));
+    return R_NilValue;
 }
 
 

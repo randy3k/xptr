@@ -81,8 +81,7 @@ xptr_protected <- function(s) {
 #' @param s an \code{externalptr} object
 #' @export
 xptr_clear <- function(s) {
-    .Call("xptr_clear", PACKAGE = "xptr", s)
-    invisible(NULL)
+    invisible(.Call("xptr_clear", PACKAGE = "xptr", s))
 }
 
 #' Set the address of the external pointer.
@@ -90,8 +89,7 @@ xptr_clear <- function(s) {
 #' @param p a string of pointer address
 #' @export
 set_xptr_address <- function(s, p) {
-    .Call("set_xptr_address", PACKAGE = "xptr", s, p)
-    invisible(NULL)
+    invisible(.Call("set_xptr_address", PACKAGE = "xptr", s, p))
 }
 
 #' Set a tag to the external poitner.
@@ -99,8 +97,7 @@ set_xptr_address <- function(s, p) {
 #' @param tag an R object
 #' @export
 set_xptr_tag <- function(s, tag) {
-    .Call("set_xptr_tag", PACKAGE = "xptr", s, tag)
-    invisible(NULL)
+    invisible(.Call("set_xptr_tag", PACKAGE = "xptr", s, tag))
 }
 
 #' Set a protected R object to the external poitner.
@@ -108,8 +105,7 @@ set_xptr_tag <- function(s, tag) {
 #' @param protected an R object
 #' @export
 set_xptr_protected <- function(s, protected) {
-    .Call("set_xptr_protected", PACKAGE = "xptr", s, protected)
-    invisible(NULL)
+    invisible(.Call("set_xptr_protected", PACKAGE = "xptr", s, protected))
 }
 
 #' Register a finalizer for external poitner.
@@ -119,6 +115,5 @@ set_xptr_protected <- function(s, protected) {
 #' @seealso \code{\link[base]{reg.finalizer}}
 #' @export
 register_xtr_finalizer <- function(s, f, onexit = FALSE) {
-    .Call("register_xtr_finalizer", PACKAGE = "xptr", s, f, onexit)
-    invisible(NULL)
+    invisible(.Call("register_xtr_finalizer", PACKAGE = "xptr", s, f, onexit))
 }

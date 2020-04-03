@@ -13,7 +13,7 @@ This package provides some basic tools to verify, create and modify 'externalptr
 library(xptr)
 a <- new_xptr("0x11a888090")
 b <- new_xptr("0x11a888098")
-is_xpt(a)
+is_xptr(a)
 #> [1] TRUE
 xptr_address(a)
 #> [1] "0x11a888090"

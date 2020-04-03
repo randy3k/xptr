@@ -13,7 +13,7 @@
 #' library(xptr)
 #' a <- new_xptr("0x11a888090")
 #' b <- new_xptr("0x11a888098")
-#' is_xpt(a)
+#' is_xptr(a)
 #' xptr_address(a)
 #' xptr_clear(a)
 #' is_null_xptr(a)
@@ -25,7 +25,7 @@ NULL
 #' @param s an \code{externalptr} object
 #' @return a boolean
 #' @export
-is_xpt <- function(s) {
+is_xptr <- function(s) {
     mode(s) == "externalptr"
 }
 
@@ -114,6 +114,6 @@ set_xptr_protected <- function(s, protected) {
 #' @param onexit should the finalizer execute on exit?
 #' @seealso \code{\link[base]{reg.finalizer}}
 #' @export
-register_xtr_finalizer <- function(s, f, onexit = FALSE) {
-    invisible(.Call("register_xtr_finalizer", PACKAGE = "xptr", s, f, onexit))
+register_xptr_finalizer <- function(s, f, onexit = FALSE) {
+    invisible(.Call("register_xptr_finalizer", PACKAGE = "xptr", s, f, onexit))
 }

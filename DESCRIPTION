@@ -14,4 +14,6 @@ Depends:
     R (>= 3.4.0)
 License: MIT + file LICENSE
 NeedsCompilation: yes
-RoxygenNote: 6.1.1
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0

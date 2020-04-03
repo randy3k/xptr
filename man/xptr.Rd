@@ -3,7 +3,6 @@
 \docType{package}
 \name{xptr}
 \alias{xptr}
-\alias{xptr-package}
 \title{Manipulating External Pointer}
 \description{
 There is limited native support for external pointers in the R interface.
@@ -13,7 +12,7 @@ This package provides some basic tools to verify, create and modify 'externalptr
 library(xptr)
 a <- new_xptr("0x11a888090")
 b <- new_xptr("0x11a888098")
-is_xpt(a)
+is_xptr(a)
 xptr_address(a)
 xptr_clear(a)
 is_null_xptr(a)

@@ -69,7 +69,7 @@ SEXP set_xptr_protected(SEXP s, SEXP protected) {
     return R_NilValue;
 }
 
-SEXP register_xtr_finalizer(SEXP s, SEXP f, SEXP onexit) {
+SEXP register_xptr_finalizer(SEXP s, SEXP f, SEXP onexit) {
     check_is_xptr(s);
     if (!isFunction(f)) error("expect a function");
     if (!isNumeric(onexit)) error("expect TRUE/FALSE");
@@ -89,7 +89,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"set_xptr_address", (DL_FUNC) &set_xptr_address, 2},
     {"set_xptr_tag", (DL_FUNC) &set_xptr_tag, 2},
     {"set_xptr_protected", (DL_FUNC) &set_xptr_protected, 2},
-    {"register_xtr_finalizer", (DL_FUNC) &register_xtr_finalizer, 3},
+    {"register_xptr_finalizer", (DL_FUNC) &register_xptr_finalizer, 3},
     {NULL, NULL, 0}
 };
 

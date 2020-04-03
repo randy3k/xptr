@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Set the address of the external pointer. — set_xptr_address • xptr</title>
+<title>Register a finalizer for external poitner. — register_xptr_finalizer • xptr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Set the address of the external pointer. — set_xptr_address" />
-<meta property="og:description" content="Set the address of the external pointer." />
+<meta property="og:title" content="Register a finalizer for external poitner. — register_xptr_finalizer" />
+<meta property="og:description" content="Register a finalizer for external poitner." />
 
 
 
@@ -103,16 +103,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Set the address of the external pointer.</h1>
+    <h1>Register a finalizer for external poitner.</h1>
     
-    <div class="hidden name"><code>set_xptr_address.Rd</code></div>
+    <div class="hidden name"><code>register_xptr_finalizer.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Set the address of the external pointer.</p>
+    <p>Register a finalizer for external poitner.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>set_xptr_address</span>(<span class='no'>s</span>, <span class='no'>p</span>)</pre>
+    <pre class="usage"><span class='fu'>register_xptr_finalizer</span>(<span class='no'>s</span>, <span class='no'>f</span>, <span class='kw'>onexit</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -122,11 +122,18 @@
       <td><p>an <code>externalptr</code> object</p></td>
     </tr>
     <tr>
-      <th>p</th>
-      <td><p>a string of pointer address</p></td>
+      <th>f</th>
+      <td><p>an R function</p></td>
+    </tr>
+    <tr>
+      <th>onexit</th>
+      <td><p>should the finalizer execute on exit?</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='https://rdrr.io/r/base/reg.finalizer.html'>reg.finalizer</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

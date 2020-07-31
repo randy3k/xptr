@@ -2,7 +2,7 @@
 % Please edit documentation in R/xptr.R
 \name{set_xptr_tag}
 \alias{set_xptr_tag}
-\title{Set a tag to the external poitner.}
+\title{Set a tag to the external pointer.}
 \usage{
 set_xptr_tag(s, tag)
 }
@@ -12,5 +12,5 @@ set_xptr_tag(s, tag)
 \item{tag}{an R object}
 }
 \description{
-Set a tag to the external poitner.
+Set a tag to the external pointer.
 }

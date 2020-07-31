@@ -92,7 +92,7 @@ set_xptr_address <- function(s, p) {
     invisible(.Call("set_xptr_address", PACKAGE = "xptr", s, p))
 }
 
-#' Set a tag to the external poitner.
+#' Set a tag to the external pointer.
 #' @param s an \code{externalptr} object
 #' @param tag an R object
 #' @export
@@ -100,7 +100,7 @@ set_xptr_tag <- function(s, tag) {
     invisible(.Call("set_xptr_tag", PACKAGE = "xptr", s, tag))
 }
 
-#' Set a protected R object to the external poitner.
+#' Set a protected R object to the external pointer.
 #' @param s an \code{externalptr} object
 #' @param protected an R object
 #' @export
@@ -108,7 +108,7 @@ set_xptr_protected <- function(s, protected) {
     invisible(.Call("set_xptr_protected", PACKAGE = "xptr", s, protected))
 }
 
-#' Register a finalizer for external poitner.
+#' Register a finalizer for external pointer.
 #' @param s an \code{externalptr} object
 #' @param f an R function
 #' @param onexit should the finalizer execute on exit?

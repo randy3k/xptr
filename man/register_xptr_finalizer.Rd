@@ -2,7 +2,7 @@
 % Please edit documentation in R/xptr.R
 \name{register_xptr_finalizer}
 \alias{register_xptr_finalizer}
-\title{Register a finalizer for external poitner.}
+\title{Register a finalizer for external pointer.}
 \usage{
 register_xptr_finalizer(s, f, onexit = FALSE)
 }
@@ -14,7 +14,7 @@ register_xptr_finalizer(s, f, onexit = FALSE)
 \item{onexit}{should the finalizer execute on exit?}
 }
 \description{
-Register a finalizer for external poitner.
+Register a finalizer for external pointer.
 }
 \seealso{
 \code{\link[base]{reg.finalizer}}

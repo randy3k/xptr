@@ -2,7 +2,7 @@
 % Please edit documentation in R/xptr.R
 \name{set_xptr_protected}
 \alias{set_xptr_protected}
-\title{Set a protected R object to the external poitner.}
+\title{Set a protected R object to the external pointer.}
 \usage{
 set_xptr_protected(s, protected)
 }
@@ -12,5 +12,5 @@ set_xptr_protected(s, protected)
 \item{protected}{an R object}
 }
 \description{
-Set a protected R object to the external poitner.
+Set a protected R object to the external pointer.
 }

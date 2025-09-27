@@ -1,3 +1,9 @@
+# Maintainer change
+
+The package is now maintained by Dirk Eddelbuettel, https://github.com/eddelbuettel/xptr.
+
+
+
 # Manipulating External Pointer
 
 There is limited native support for external pointers in the R interface.
